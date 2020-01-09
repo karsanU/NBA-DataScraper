@@ -1,5 +1,5 @@
 """
-Tells the web-page to wait for a given amount of time to esure that all the javascript contents are loaded.
+Tells the web-page to wait for a given amount of time to ensure that all the javascript contents are loaded.
 """
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
 
-def waitTillLoaded(driver, XPATH, timeout):
+def wait_till_loads(driver, XPATH, timeout):
     # Wait max 60 seconds for page to load
     try:
         # Wait until the final element table is loaded.

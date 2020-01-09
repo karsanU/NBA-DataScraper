@@ -5,7 +5,7 @@ Source: https://stats.nba.com/teams/
 """
 import pandas as pd
 from selenium import webdriver
-from waitTillLoaded import waitTillLoaded
+from waitTillLoaded import wait_till_loads
 from tradeDeadLineDates import *
 
 pd.options.display.max_rows = 4000
@@ -29,10 +29,10 @@ for year in tradeDeadLineConst:
                                                                                             "&DateFrom=" + startDate \
              + year + "&DateTo=07%2F01%2F" + year + " "
     driver.get(url)
-    waitTillLoaded(driver, "/html/body/main/div[2]/div/div[2]/div/div/nba-stat-table/div[2]/div[1]/table/tbody", 60)
+    wait_till_loads(driver, "/html/body/main/div[2]/div/div[2]/div/div/nba-stat-table/div[2]/div[1]/table/tbody", 60)
     teamTable = pd.read_html(driver.page_source, encoding='utf8')[0]
     driver.get(urlOpp)
-    waitTillLoaded(driver, "/html/body/main/div[2]/div/div[2]/div/div/nba-stat-table/div[2]/div[1]/table/tbody", 60)
+    wait_till_loads(driver, "/html/body/main/div[2]/div/div[2]/div/div/nba-stat-table/div[2]/div[1]/table/tbody", 60)
     oppTable = pd.read_html(driver.page_source, encoding='utf8')[0]
 
     # put the table into pandas df
