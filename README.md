@@ -1,2 +1,2 @@
 # NBA-DataScraper
-Automates the collection of NBA play off game data.
+Automates the collection of historical NBA playoff game data from various websites for analysis. 
